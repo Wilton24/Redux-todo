@@ -6,15 +6,15 @@ interface Todo {
     isCompleted: boolean;
 }
 
-const initialState: Todo[] = [
-    { id: 1, text: "Learn React", isCompleted: false },
-    { id: 2, text: "Practice Redux", isCompleted: true },
-    { id: 3, text: "Build a Todo App", isCompleted: false },
-];
+// const initialState: Todo[] = [
+//     { id: 1, text: "Learn React", isCompleted: false },
+//     { id: 2, text: "Practice Redux", isCompleted: true },
+//     { id: 3, text: "Build a Todo App", isCompleted: false },
+// ];
 
 const todoSlice = createSlice({
     name: 'todos',
-    initialState: initialState,
+    initialState: [] as Todo[],
     reducers: {
         addTodo: (state, action) => {
             state.push({

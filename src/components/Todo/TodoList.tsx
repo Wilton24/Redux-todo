@@ -1,15 +1,25 @@
 import { useSelector, useDispatch } from "react-redux";
 import Todo from "./Todo";
+import { useRef } from "react";
+
 
 export default function TodoList() {
+    const addTodoRef = useRef<HTMLInputElement>(null);
     const todos = useSelector((state: { todos: { id: number; text: string; isCompleted: boolean }[] }) => state.todos);
     const dispatch = useDispatch();
+
+    function handleAddTodo() {
+        dispatch({ type: 'todos/addTodo', payload: addTodoRef.current?.value });
+        addTodoRef.current!.value = "";
+    }
 
     return (
         <main>
             <h2>Todo List</h2>
-            <input type="text" />
-            <button className="add-todo">Add Todo</button>
+            <input type="text" ref={addTodoRef} />
+            <button
+                onClick={() => handleAddTodo()}
+                className="add-todo">Add Todo</button>
             <ul className="todo-list">
 
                 {todos.map(todo => (
