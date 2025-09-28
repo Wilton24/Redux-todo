@@ -10,27 +10,32 @@ export default function Todolist() {
                 <li>
                     <input type="checkbox" />
                     <span>Learn React</span>
-                    <button>Delete</button>
+                    <button className="edit-todo-btn">Edit</button>
+                    <button className="delete-todo-btn">Delete</button>
                 </li>
                 <li>
                     <input type="checkbox" />
                     <span>Learn Redux</span>
-                    <button>Delete</button>
+                    <button className="edit-todo-btn">Edit</button>
+                    <button className="delete-todo-btn">Delete</button>
                 </li>
                 <li>
                     <input type="checkbox" />
                     <span>Build something fun!</span>
-                    <button>Delete</button>
+                    <button className="edit-todo-btn">Edit</button>
+                    <button className="delete-todo-btn">Delete</button>
                 </li>
                 <li>
                     <input type="checkbox" />
                     <span>Build something fun!</span>
-                    <button>Delete</button>
+                    <button className="edit-todo-btn">Edit</button>
+                    <button className="delete-todo-btn">Delete</button>
                 </li>
                 <li>
                     <input type="checkbox" />
                     <span>Build something fun!</span>
-                    <button>Delete</button>
+                    <button className="edit-todo-btn">Edit</button>
+                    <button className="delete-todo-btn">Delete</button>
                 </li>
             </ul>
         </main>
