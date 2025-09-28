@@ -15,6 +15,7 @@ export default function TodoList() {
                 {todos.map(todo => (
                     <Todo
                         key={todo.id}
+                        id={todo.id}
                         text={todo.text}
                         isCompleted={todo.isCompleted}
                     />
