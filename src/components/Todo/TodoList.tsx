@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 export default function TodoList() {
     const addTodoRef = useRef<HTMLInputElement>(null);
-    const todos = useSelector((state: { todos: { id: number; text: string; isCompleted: boolean }[] }) => state.todos);
+    const todos = useSelector((state: { todos: { id: number; text: string; isEditing: boolean; isCompleted: boolean }[] }) => state.todos);
     const dispatch = useDispatch();
 
     function handleAddTodo() {
@@ -27,6 +27,7 @@ export default function TodoList() {
                         key={todo.id}
                         id={todo.id}
                         text={todo.text}
+                        isEditing={todo.isEditing}
                         isCompleted={todo.isCompleted}
                     />
                 ))}
