@@ -38,6 +38,15 @@ const todoSlice = createSlice({
                 todo.isEditing = true;
             }
         },
+        markAsCompleted: (state, action) => {
+            const id = action.payload;
+            const todo = state.find(todo => todo.id === id);
+            if (todo && todo.isCompleted === false) {
+                todo.isCompleted = true;
+            } else {
+                todo!.isCompleted = false;
+            }
+        }
     }
 });
 

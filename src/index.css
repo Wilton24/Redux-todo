@@ -151,6 +151,11 @@ input[type="text"]:focus {
   background: #d9363e;
 }
 
+.marked-complete span {
+  text-decoration: line-through;
+  color: gray;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

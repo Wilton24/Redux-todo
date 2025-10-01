@@ -1,6 +1,8 @@
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 
+let todoClass = "todo-item marked-complete";
+
 
 export default function Todo({ text, isCompleted, isEditing, id }: { text: string; isCompleted: boolean; isEditing: boolean; id: number }) {
     const dispatch = useDispatch();
@@ -18,8 +20,14 @@ export default function Todo({ text, isCompleted, isEditing, id }: { text: strin
         dispatch({ type: 'todos/saveTodo', payload: { id, text: enteredTodo } });
     };
 
+    function markAsDone(id: number) {
+        dispatch({ type: 'todos/markAsCompleted', payload: id })
+    };
+
+
     return (
-        <li className="todo-item">
+        <li onClick={() => markAsDone(id)}
+            className={isCompleted ? todoClass : "todo-item"}>
             <input type="checkbox" />
             {isEditing ? (
                 <input
