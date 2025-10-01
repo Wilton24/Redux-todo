@@ -7,12 +7,6 @@ interface Todo {
     isCompleted: boolean;
 }
 
-// const initialState: Todo[] = [
-//     { id: 1, text: "Learn React", isCompleted: false },
-//     { id: 2, text: "Practice Redux", isCompleted: true },
-//     { id: 3, text: "Build a Todo App", isCompleted: false },
-// ];
-
 const todoSlice = createSlice({
     name: 'todos',
     initialState: [] as Todo[],
@@ -33,16 +27,17 @@ const todoSlice = createSlice({
             const { id, text } = action.payload;
             const todo = state.find(todo => todo.id === id);
             if (todo) {
-                todo.isEditing = !todo.isEditing;
+                todo.text = text;
+                todo.isEditing = false;
             }
         },
         editTodo: (state, action) => {
             const id = action.payload;
             const todo = state.find(todo => todo.id === id);
             if (todo) {
-                todo.isEditing = !todo.isEditing;
+                todo.isEditing = true;
             }
-        }
+        },
     }
 });
 
