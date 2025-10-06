@@ -9,8 +9,10 @@ export default function TodoList() {
     const dispatch = useDispatch();
 
     function handleAddTodo() {
+        if (addTodoRef.current?.value === "") return;
         dispatch({ type: 'todos/addTodo', payload: addTodoRef.current?.value });
         addTodoRef.current!.value = "";
+        console.log(todos);
     }
 
     return (
